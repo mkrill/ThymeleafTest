@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>SoundMachine - Bandsearch</title>
+    <link rel="stylesheet" href="../SoundMachine.css">
+</head>
+
+<body>
+    <h1>Meine Instrumente</h1>
+    <form th:action="@{/searchresult}">
+        <ul>
+            <li th:each="instr : ${instruments}">
+                <input type="checkbox" th:value="${instr.name}" th:field="*{instruments}"/>
+				<label th:text="${instr.name}">Instrument</label>
+            </li>
+        </ul>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
